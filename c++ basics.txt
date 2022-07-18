@@ -1,0 +1,1884 @@
+g#include<bits/stdc++.h>//includes all header files
+--------------------------------------------------
+#include<iostream>
+using namespace std;
+int main(){
+    int a;//variable declaration
+    a=12//variable initialization
+    float b;
+    double c;
+    bool d;
+    cout<<"the size of a is "<<sizeof(a)<<endl;//sizeof() fun finds out the var size
+    return 0;
+}
+------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+    {
+        int a;
+        cout<<"enter num a\n";
+        cin>>a;//taking i/p
+        cout<<"enter num b\n";
+        int b;
+        cin>>b;//i/p
+
+        int sum=a+b;
+        cout<<sum;
+}
+----------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+    {
+        int a;
+        cout<<"enter a";
+        cin>>a;
+        int b;
+        cout<<"enter b";
+        cin>>b;
+        int c;
+        cout<<"enter c";
+        cin>>c;
+        if(a>b)
+        {
+            if(a>c)
+            {cout<<"a";}
+            else
+            {cout<<"c";}
+        }
+        else
+        {
+            if(b>c)
+            {
+                cout<<"b";
+            }
+            else
+            {cout<<"c";}
+            
+        }
+       return 0;
+}
+----------------------------------------------------------------------
+#for loop-
+for(initializer;condition;update){}
+#while(){}
+#do{}while()
+--------------------------------------------------------------
+#pattern 1-
+#include<iostream>
+using namespace std;
+int main()
+    {
+        int i=1;
+        int j=1;
+        int k;
+        for(i=1;i<=3;i++)
+        {
+            for(j=i;j<=3;j++)
+            {
+                cout<<" ";
+            }
+           for(k=1;k<=i;k++)
+           {
+               cout<<"$$";
+           }
+            cout<<"\n";
+        }
+        for(i=1;i<=3;i++)
+        {
+            for(j=1;j<=i;j++)
+            {
+                cout<<" ";
+            }
+           for(k=i;k<=3;k++)
+           {
+               cout<<"$$";
+           }
+            cout<<"\n";
+        }
+
+       return 0;
+}
+op=
+   $$
+  $$$$
+ $$$$$$
+ $$$$$$
+  $$$$
+   $$
+----------------------------------------------------------------------
+#SWITCH STATEMENT-
+*they are substitute to long if else statements.
+---------------------------------------------------------------------
+pattern inverted pyramid-
+cout<<"enter the limit\n";
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        for(j=n;j>=i;j--)
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+op=
+*****
+****
+***
+**
+*
+------------------------------
+pattern -180` inverted triangle-
+for(i=1;i<=n;i++)
+    {
+       for(j=1;j<=n;j++)
+       {
+           if(j<=n-i)
+           {
+               cout<<" ";
+           }
+           else{cout<<"*";}
+       }
+
+op=
+     *
+    **
+   ***
+  ****
+ *****
+******
+----------------------------------------------
+pattern-trianglr using numbers
+1
+22
+333
+4444
+55555
+ for(i=1;i<=n;i++)
+    {
+       for(j=1;j<=i;j++)
+       {
+          cout<<i;
+       }
+       cout<<"\n";
+    }
+-----------------------------------------
+Floyds triangle-
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            
+            cout<<k;
+            cout<<" ";
+            k++;
+        }
+------------------------------------------
+pattern-hollow rectangle-
+****
+*  *
+*  *
+****
+for(i=1;i<=4;i++)
+    {
+        for(j=1;j<=4;j++)
+        {
+            if(i==1||i==4||j==1||j==4)
+            {
+                cout<<"*";
+            }
+            else{cout<<" ";}
+        }
+---------------------------------------------------
+hollow triangle -
+*****
+*  *
+* *
+**
+*
+int main()
+{
+  int n,i,j;
+  cin>>n;
+  for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=(n+1)-i;j++)
+    {
+      if(i==1||j==(n+1)-i||j==1)
+      {cout<<"*";}
+      else{cout<<" ";}
+    }
+    cout<<"\n";
+  }
+
+  return 0;
+}
+---------------------------------------------
+hollow triangle -
+      *
+     * *
+    *   *
+   *     *
+  * * * * *
+int main()
+{
+  int n,i,j;
+  cin>>n;
+  for(i=1;i<=n;i++)
+  {
+    for(j=n;j>=i;j--)
+    {cout<<" ";}
+    for(j=1;j<=i;j++)
+    {
+      if(j==1||i==1||i==n)
+      {cout<<" *";}
+      else if(j==i)
+      {
+        for(j=1;j<=i-1;j++)
+        {
+          cout<<" ";
+        }
+        cout<<"*";
+      }
+      else{cout<<" ";}
+    }
+    cout<<"\n";
+  }
+  return 0;
+}
+------------------------------------------------------
+pattern - butterfly-
+
+*     *
+**   **
+*** ***
+*******
+*** ***
+**   **
+*     *
+for(i=1;i<=n;i++)
+   {
+       for(j=1;j<=n;j++)
+       {
+           if(i<=(n/2)+1)
+           {if(j<=i||j>n-i)
+           {
+               cout<<"*";
+           }
+           else{cout<<" ";}}
+           else
+           {
+               if(j<=(n+1)-i||j>=i)
+               {
+                   cout<<"*";
+               }
+               else{cout<<" ";}
+           }
+---------------------------------------------------
+pattern -inverted no. triangle-
+12345
+1234
+123
+12
+1
+
+for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=(n+1)-i;j++)
+        {
+            cout<<j;
+        }
+        cout<<"\n";
+    }
+---------------------------------------------------------
+0-1 pattern -(always check their ixj positions and find out some relation)
+1
+01
+101
+0101
+10101
+for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            if((i+j)%2==0)
+            {
+                cout<<1;
+            }
+            else{cout<<0;}
+        }
+        cout<<"\n";
+    }
+------------------------------------------
+pattern-rohmbus-
+    ******
+   ******
+  ******
+ ******
+******
+
+int n;
+    cin>>n;
+    int l=2*n;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=l;j++)
+        
+        {
+            if(j<=n-i)
+            {
+                cout<<" ";
+            }
+            else{cout<<"*";}
+        }
+        
+             l--;
+        cout<<"\n";
+    }
+---------------------------------------------------
+    * * * * *
+    *       *
+   *       *
+  *       *
+ * * * * *
+int main()
+{
+  int n,i,j;
+  cin>>n;
+  for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n-i;j++)
+    {
+       cout<<" ";
+    }
+    for(j=1;j<=n;j++)
+    {
+      if(i==1||i==n||j==1)
+      {cout<<" *";}
+      else if(j==n)
+      {
+        for(j=1;j<=n-1;j++)
+        {cout<<" ";}
+        cout<<"*";
+      }
+      else{cout<<" ";}
+    }
+    cout<<"\n";
+  }
+  return 0;
+}
+------------------------------------------------
+1 2 3 4 5 
+2      5
+3    5
+4  5
+5
+int main()
+{
+  int n,i,j;
+  cin>>n;
+  
+ for(i=1;i<=n;i++)
+ {
+   for(j=1;j<=(n+1)-i;j++)
+   {
+    if(i==1)
+    {cout<<j<<" ";}
+    else if(j==1)
+    {cout<<i<<" ";}
+    else if(j==(n+1)-i)
+    {for(j=1;j<=(n)-i;j++)
+    {
+      cout<<" ";
+    }
+      cout<<n<<" ";}
+    else{cout<<" ";}
+   }  
+   cout<<"\n";
+ }
+  return 0;
+}
+---------------------------------------------------------
+1
+121
+12321
+1234321
+123454321
+int main()
+{
+  int n,i,j;
+ int c;
+  cin>>n;
+  for(i=1;i<=n;i++)
+  {
+   for(j=1;j<=i;j++)
+   {
+     cout<<j;
+   }
+   c=i-1;
+   for(j=1;j<=i-1;j++)
+   {
+     if(i>=2)
+     {
+       cout<<c;
+       c--;
+     }
+     else{continue;}
+   }
+    
+        cout<<"\n";
+  }
+ 
+  return 0;
+}
+
+------------------------------------------------------------
+pattern 
+     1
+    1 2
+   1 2 3
+  1 2 3 4
+ 1 2 3 4 5
+
+ for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n-i;j++)
+    {
+      cout<<" ";
+    }
+    for(j=1;j<=i;j++)
+    {
+      cout<<" "<<j;
+    }
+    cout<<"\n";
+  }
+--------------------------------------------------------------------|
+sid remember one thing that,if a pattern ,say diamond,it has spaces  |
+printed,a upper triangle and a lower traingle .so it is ok to have  | 
+4 for loops.and there can be one for loop for  just spaces ,one for | 
+upper triangle and one for lower triangle.                          |
+--------------------------------------------------------------------|
+pattern-diamond
+    *
+   ***
+  *****
+ *******
+*********
+*********
+ *******
+  *****
+   ***
+    *
+for(i=1;i<=n;i++)
+  {
+    for(j=1;j<=n-i;j++)
+    {
+      cout<<" ";
+    }
+    for(j=1;j<=2*i-1;j++)
+    {
+      cout<<"*";
+    }
+    cout<<"\n";
+  } 
+  for(i=n;i>=1;i--)
+  {
+    for(j=1;j<=n-i;j++)
+    {
+      cout<<" ";
+    }
+    for(j=1;j<=2*i-1;j++)
+    {
+      cout<<"*";
+    }
+    cout<<"\n";
+  }         
+---------------------------------------------------------------------
+pattern-zig-zag-
+  *   *  
+ * * * *
+*   *   *
+for(i=1;i<=3;i++)
+ {
+   for(j=1;j<=n;j++)
+   {
+     if((i+j)%4==0||i==2&&j%4==0)
+     {
+       cout<<"*";
+     }
+     else{cout<<" ";}
+   }
+   cout<<"\n";
+ }
+--------------------------------------|
+pattern strategy-                     |
+1)ixj positions realtion              |
+2)more for loops                      |
+--------------------------------------|
+----------------------------------------------------------------------
+reverse a number-(try to get the o/p as a single number)
+ int n;
+ cin>>n;
+ int reverse=0;
+ int lastdigit;
+ while(n>0)
+ {
+   lastdigit=n%10;
+   reverse=reverse*10 + lastdigit;
+   n=n/10;
+
+ }
+ cout<<reverse;
+----------------------------------------------------------
+armstrong number-
+153=1^3 + 5^3 + 3^3
+ m=n;
+ while(n>0)
+ {
+   l=n%10;
+  sum=sum+pow(l,3);
+   n=n/10;
+
+ }
+ if(sum==m)
+ {
+   cout<<"n is armstrong"
+ }
+ else{cout<<"not a armstrong";}
+-----------------------------------------------------------------
+prnt primes in bw 2 nums-
+bool prime(int n)
+{
+  int i;
+  for(i=2;i<=sqrt(n);i++)
+ {
+   if(n%i==0)
+   {
+    return false;
+     }
+ }
+ return true;
+}
+int main()
+{
+ int x;
+ int y;
+ cin>>x;
+ cin>>y;
+ for(int j=x;j<=y;j++)
+ {
+   if(prime(j))//if will itself check weather true
+   {
+     cout<<j<<" ";
+   }
+   
+ }
+------------------------------------------------------------
+octahedral no.-(137)8=(95)10
+octahedral to decimal-
+int main ()
+{
+  int n,i;
+  int l=0;
+int c=0;
+  cin>>n;
+  while(n>0)
+  {
+     i=n%10;
+     n=n/10;
+     l=l+i*pow(8,c);//to convert from binary to decimal ,just change 8 to 2//
+     c++;
+    
+  }
+
+cout<<l;
+
+    return 0;
+}
+-------------------------------------------------------------
+binary to decimal-
+int binaryToDecimal(int n)
+{
+  int ans=0;
+  int x=1;
+  int i;
+  while(n>0)
+  {
+    i=n%10;
+    ans+=x*i;
+    x*=2;
+    n/=10;
+  }
+  return ans;
+}
+  int main ()
+{
+  int n;
+  cin>>n;
+  cout<<binaryToDecimal(n);
+
+    return 0;
+}
+------------------------------------------------------
+decimal to binary-for(decimal to octahederal ,replace 2 with 8)-
+int decimaltobinary(int n)
+{
+  int x=1;
+  int lastdigit;
+  int ans =0;
+  while(x<n)//ye 2 ki highest power nikalne ke liye in n
+  {
+    x*=2;
+    x/=2;
+  }
+  while(x>0)
+  {
+    lastdigit=n/x;
+    n-=lastdigit*x;
+    x/=2;//2 ki power by 1 kam karega
+    ans=ans*10+lastdigit;//
+  }
+  return ans;
+}
+  int main ()
+{
+  int n;
+  cin>>n;
+ cout<<decimaltobinary(9);
+  
+    return 0;
+}
+---------------------------------------------------------------------
+pascal triangle-
+1  (0c0)
+11
+121
+1331
+14641
+int fact(int n)
+{
+  int i;
+  int f=1;
+  for(i=1;i<=n;i++)
+  {
+     f*=i;
+  }
+  return f;
+}
+  int main ()
+{
+  int n;
+  int i,j;
+   cin>>n;
+  for(i=0;i<=n-1;i++)
+  {
+    for(j=0;j<=i;j++)
+    {
+      cout<<fact(i)/(fact(i-j)*fact(j))<<" ";
+    }
+    cout<<"\n";
+  }
+  return 0;
+}
+---------------------------------------------
+fibonacci series-
+int main()
+{
+  int n,s,i;
+  cin>>n;
+  int t1=0;
+  int t2=1;
+  for(i=1;i<=n;i++)
+  {
+    cout<<t1<<" ";
+    s=t1+t2;
+    t1=t2;
+    t2=s;
+  }
+  return 0;
+}
+op=0 1 1 2 3 5 8 13 .....
+---------------------------------------------------
+hollow triangle -
+      *
+     * *
+    *   *
+   *     *
+  * * * * *
+int main()
+{
+  int n,i,j;
+  cin>>n;
+  for(i=1;i<=n;i++)
+  {
+    for(j=n;j>=i;j--)
+    {cout<<" ";}
+    for(j=1;j<=i;j++)
+    {
+      if(j==1||i==1||i==n)
+      {cout<<" *";}
+      else if(j==i)
+      {
+        for(j=1;j<=i-1;j++)
+        {
+          cout<<" ";
+        }
+        cout<<"*";
+      }
+      else{cout<<" ";}
+    }
+    cout<<"\n";
+  }
+  return 0;
+}
+----------------------------------------
+          0 
+        0 1 0
+      0 1 2 1 0
+    0 1 2 3 2 1 0
+  0 1 2 3 4 3 2 1 0
+0 1 2 3 4 5 4 3 2 1 0
+  0 1 2 3 4 3 2 1 0
+    0 1 2 3 2 1 0
+      0 1 2 1 0
+        0 1 0
+          0 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int i,j,k,l;
+	for(i=0;i<=n;i++)
+	{
+	    for(l=n;l>=i;l--)
+	    {
+	        if(l==i)
+	        {
+	            cout<<"0 ";
+	        }
+	        else
+	        {
+	            cout<<"  ";
+	        }
+	        
+	    }
+	   
+	    if(i!=0)
+	    {
+	        for(j=1;j<=i;j++)
+	    {
+	       
+	            cout<<j<<" ";
+	        
+	    }
+	    for(k=i-1;k>=0;k--)
+	    {
+	        
+	        if(k==0)
+	        {
+	            cout<<"0";
+	        }
+	        else
+	        {
+	            cout<<k<<" ";
+	        }
+	    }
+	    }
+	    cout<<endl;
+	}
+	n-=1;
+		for(i=n;i>=0;i--)
+		{
+		    for(l=n;l>=i;l--)
+		    {
+		        if(l==i)
+		        {
+		            cout<<"  0 ";
+		        }
+		        else
+		        {
+		            cout<<"  ";
+		        }
+		    }
+		    if(i!=0)
+		    {
+		       for(j=1;j<=i;j++)
+	    {
+	       
+	            cout<<j<<" ";
+	        
+	    }
+	    for(k=i-1;k>=0;k--)
+	    {
+	        
+	        if(k==0)
+	        {
+	            cout<<"0";
+	        }
+	        else
+	        {
+	            cout<<k<<" ";
+	        }
+	    } 
+		    }
+		    cout<<endl;
+		}
+		
+		   
+		
+	
+	return 0;
+}
+
+------------------------------------------
+DATA STRUCTURES-
+A)ARRAYS-
+binary search in array-
+int binarysearch(int n,int arr[],int key)
+{
+  int mid;
+  int s=0;
+  int e=n;
+  while(s<=e)
+  {
+    mid=(s+e)/2;
+    s=mid;
+    if(arr[s]==key)
+    {return s;}
+  }
+  return -1;
+}
+int main()
+{
+ int n,i;
+ cin>>n;
+ int arr[n];
+ for(i=0;i<n;i++)
+ {
+   cin>>arr[i];
+ }
+ int key;
+ cin>>key;
+ cout<<binarysearch(n,arr,key);
+  return 0;
+}
+-----------------------------------------------------------------------------------------------
+sorting in array-
+1)SELECTION SORT-
+find the minimum element in the unsorted array and swap it with the element at the begining.
+int main()
+{
+  int n,i,j;
+  int mx;
+  cin>>n;
+  int arr[n];
+  for(i=0;i<n;i++)
+  {
+    cin>>arr[i];
+  }
+  for(i=0;i<n-1;i++)
+  {
+    for(j=i+1;j<n;j++)
+    {
+      mx=min(arr[j],arr[i]);
+      int temp;
+      temp=arr[i];
+      arr[i]=arr[j];
+      arr[j]=temp;
+    }
+  }
+  for(i=0;i<n;i++)
+  {
+    cout<<arr[i]<<" ";
+  }
+  return 0;
+}
+-------------------------------------------------------------------
+2)BUBBLE SORT-
+repeatedly swap two adjacent elements if they are in wrong order.
+int main()
+{
+    int n,i;
+    cin>>n;
+    int c=0;
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    while(c<n-1)
+    {
+        for(i=0;i<n-c;i++)
+        {
+            if(arr[i]>arr[i+1])
+            {int temp;
+            temp=arr[i];
+            arr[i]=arr[i+1];
+            arr[i+1]=temp;}
+        }
+        c++;
+    }
+    for(i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+----------------------------------------------------------------------------------------
+3)INSERTION SORTING-
+insert the element from the unsorted array to its correct position in the sorted array.
+int main()
+{
+      int n,i;
+      cin>>n;
+      int arr[n];
+for(i=0;i<n;i++)
+{
+      cin>>arr[i];
+}
+for(i=0;i<n;i++)
+{
+     int current =arr[i];
+     int j=i-1;
+     while(arr[j]<current && j>=0) //for ascending order put > and for desceding <
+     {
+           arr[j+1]=arr[j];
+           j--;
+     }
+     arr[j+1]=current;
+}
+for(i=0;i<n;i++)
+{
+    cout<<arr[i]<<" ";
+}
+      return 0;
+
+}
+----------------------------------------------------------------------
+SEARCHING IN ARRAY-
+BINARY SEARCH-(ONLY APPLICABLE FOR SORTED ARRAY)
+int bs(int arr[],int n,int k)
+{
+      int s=0,e=n,m;
+      while(s<e)
+      {
+            m=(s+e)/2;
+            s=m;
+            if(arr[s]==k)
+            {
+                  return s;
+            }
+      }
+      return -1;
+}
+int main()
+{
+      int n,k,i;
+      cin>>n;
+     int arr[n];
+     for(i=0;i<n;i++)
+     {
+           cin>>arr[i];
+     }
+     cin>>k;
+     cout<<bs(arr,n,k);
+     
+      return 0;
+
+}
+--------------------------------------------------------------------------------------------
+Q1-print the max element for max i(1st 0 t0 0,0 to 1 ,0 to 2,...0 to i )
+int main()
+{
+    int n,i,mi;
+    int mn=INT_MIN;
+    cin>>n;
+    int m=0;
+    
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(i=0;i<=m;i++)
+    {
+       if(m<n){ mi=max(mn,arr[i]);
+        mn=mi;
+        cout<<mi<<" ";
+        m++;}
+    }
+    
+    
+    return 0;
+}
+ip-5 4 3 2 1
+op-5 5 5 5 5
+
+Q2- prnt sum of subarray -
+SUBARRAY-continous part of the array.
+like array -0..n
+then subarray can be 0..3,3..8.1..n and so on.
+the total number of subarray of the array =nC2 + n=n(n+1)/2
+
+ans -int main()
+{
+    int n,i,j;
+    
+    cin>>n;
+   
+    int sum=0;
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(i=0;i<n;i++)
+    {
+sum=0;
+       for(j=i;j<n;j++)
+       {
+           
+               sum=sum+arr[j];
+           cout<<sum<<" ";
+           
+           
+           
+       }
+       
+    }
+    
+    
+    return 0;
+}
+---------------------------------------------------------------------------
+KADANES ALGORITHM-Used to find out max sum of a contigous sub-array.
+
+{
+   
+int n;
+cin>>n;
+int arr[n];
+for(int i=0;i<n;i++)
+{
+    cin>>arr[i];
+}
+int m=INT_MIN,p=0;
+for(int i=0;i<n;i++)
+{
+    p+=arr[i];
+   if(m<p)
+   {
+       m=p;
+   }
+   if(p<0)
+   {
+       p=0;
+   }
+}
+cout<<m<<endl;
+
+}
+------------------------------------------------------------------------
+TO FIND OUT MAX SUM OF CONTIGOUS SUB-ARRAY WITH CIRCULAR ARRAY-
+STEP 1-f/o max sum of the sub-array using Kadanes algo and store in var S1.
+STEP 2- f/o sum of all elements in the array and store in SUM.
+STEP 3-multiply -1 to each element of array and f/o the new array's max sub
+array max sum.
+STEP 4- add SUM and result of step 3.
+STEP 5- print max of (result of step 4 , S1) 
+
+---------------------------------------------------------------------------------
+SUBSEQUENCE-a subsequence is a sequence that can be derived by selecting zero or more elements without 
+changing their order.
+ex- 1 2 3 4 5
+ss=1,3,4 or 4,5 or 1,5 etc.
+total ss=2 power n.
+---------------------------------------------------------------
+EVERY SUBARRAY IS A SUBSEQUENCE BUT EVERY SS IS NOT AN SA.
+---------------------------------------------------------------
+#CHARACTER ARRAY-
+to declare-
+char arr[n+1];//taking +1 to include the null terminating character ('\0')
+or char ar[100];
+to i/p-
+cin>>arr;
+to o/p-
+cout<<arr;
+------------------------------------------------------------------
+#to take i/p a sentence-
+cin.ignore();
+char  arr[n+1];
+cin.getline(arr,n);
+cin.ignore();
+------------------------------
+#POINTERS IN C++
+->points the address of the variable.
+->the values of addresses are in hexadecimal.
+int a;
+int*aptr;(stores address of a)[if the var is char,then char*,if bool then bool*]
+aptr=&a; 
+cout<<&a;(prnts address of a)
+cout<<aptr;(prnts address of a)
+cout<<*aptr(prnts value of a)[this is called dereferencing(accessing the var through pointer)]
+
+#POINTER ARITHMETIC-
+->operations that can be performed on pointers- ++,--,+,- only.
+ex-
+int a;
+int*aptr=&a;(say the address is 2000)
+aptr++;
+cout<<aptr;(prnts 2004 not 2001)[as datatype is int and int has size 4bytes,hence an increment of 4].
+[for char it is 1 byte and so on..]
+
+#POINTERS AND ARRAYS-
+taking an example-
+int arr[]={10,20,30,40};
+cout<<*arr;[prnts the 0th element of the array i.e 10]
+->arr stores the address of the 0th element by default.
+->and *arr gives the 0th elements value.
+ to print the array using pointer-
+int *ptr=arr;
+for(i=0;i<3;i++)
+{
+cout<<*ptr;
+ptr++;(if ptr++ isnt there,then it will print 10 ,4 times.hence we incement the address and get the diff
+values).
+}
+
+we can print the array by only using arr-
+for(i=0;i<3;i++)
+{
+cout<<*(arr+i);[at i=0,it points at 10,at i=1 points at 20 and so on..]
+we cant use arr++ as arr acts as  a constant pointer i.e it cant be incremented or decre.
+and arr is a indexing pointer ,i.e when did arr+i,it goes on the next index not the next memory
+therefore arr+4*i is not done.
+}
+
+#POINTER TO POINTER-
+int a=10;
+int*p;
+p=&a;
+cout<<*p;[prnts 10]
+int **q=&p;
+cout<<*q;[prnts address of a i.e the value of p(as p stores the address of a)]
+cout<<**q;[prnts 10][dereferencing done 2 times][as *q is address of a stored in p and *(&p) is the
+value of a]
+
+#PASSING POINTER TO FUNCTION-
+EX-
+void in(int a)
+{
+a++;
+}
+int main()
+{
+int a=10;
+cout<<in(a);[prnts 10 not 11]
+[beacuse in a function ,a value is passed not the var(called call by value)and the a in the fun in is another
+ variable storing 10, not the a in the main fun]
+by using pointer we can increment the value.
+i.e send the address of the a in fun in()[called call by reference]
+void in(int*a)
+{
+*a++;
+}
+int main()
+{
+int a=10;
+int *p;
+p=&a;
+cout<<in(p);
+}
+-------------------------------------------------------------------------------------------------------
+#STACK AND HEAP-
+STACK- it is data structure designed to operate in LIFO(LAST IN FIRST OUT)[i.e removing elements in reverse
+order you insert them].It is container adapter- container meaning it contains data of same type.
+ex- int main()
+{
+int a,b;
+fun(a,b);
+}
+ the main funs memory stack frame will get stored in the stack with its local variables(a,b) and then
+ the fun called will get stored in the stack.When the funs are called and returned ,then the stack frame
+of the fun gets poped out from the stack.
+STACK
+->it has a fixed size
+->when more fun are used ,and the program tries to allocate memory more than in the stack ,then stack 
+overflow occurs and the program gets crashed.
+it happens in the recurssion fun case,when there is no break to the fun calling ,and the fun gets
+called again and again ,the stack gets filled and hence overflow occurs.
+[whenever the fun is called ,a stack memory is allocated for it in the stack .and when the fun is returned 
+,the stack frame of the fun gets poped out.]
+
+HEAP(free store)-it is a data structure that does not has fixed memory(can be expaned) unlike stack.
+-> we allocate the memory manually and then deallocate it after the run.
+->to store a vriable in heap 
+we use new operator-
+ex-
+int *p=new int();[memory allocated in heap]
+*p=10;
+->but the p wont be stored in the heap, only the value 10 will be stored in the heap.p is the address
+and it will be stored in the stack and it will point the memory address in the heap where the value
+is stored.
+->the value in the heap can be accessed from anywhere as long it is there in the heap unless we delete it.
+the variable created acts as a GLOBAL VARIABLE.
+->unlike the stack(where the system does the allocation and dealo.) ,in heap ,the memory is manually 
+allocated and manually deallocated. hence we have to delete the var.
+->to dealocate the memory in heap-we use delete-
+delete(p);
+but the pointer stored will remain ther and since there is nothing to point as we have deleted the memory
+hence it will dangle and called dangaling pointer.[pointing to memory location where no value is stored].
+->but we can still use te dangaling pointer i.e we can store some other thing in the memory in the heap
+where the pointer is pointing.
+->lets create an array which will  be pointed by the dangaling pointer.
+p=new int(size of the array say 4);  [we will use new operator since we have to store this in the heap.]
+
+->to delete the array memory in the heap -
+delete[]p;
+->to remove the pointer (dangaling or any other)-
+p=NULL;
+
+->if we dont deallocate the memory in the heap then it leads to MEMORY LEAK and to avoid it we must 
+dealocate the memory we created in the heap.
+--------------------------------------------------------------------------------------------------------------------------------------
+#STRING-
+string a;//no need to define size
+cin>>a;
+string c="siddharth"
+1)cout<<a.length()<<c.length();
+string s;
+
+2)cin>>getline(cin,s);//to take a sentence as a i/p
+cout<<s;//prnts whole sntence,if getline not used then only 1st word will be printed
+
+3)//to append(join) 2 strings
+cout<<a.append(c);
+//or
+cout<<a+s;
+cout<<s[0];//to access a particular character of string 
+
+4)cout<<s.clear()//clears the string,empties it
+
+5)cout<<a.compare(s);//returns positive if s is bigger than a
+//returns negetive if s smaller than a,and zero if equal
+
+6)s.empty();
+if(s.empty())//to check weather the string is empty or not
+cout<<"s is empty"; 
+
+7)cout<<a.erase(0,2);//erases the part of the string,0->starting index,2->no. of
+//chars to be erased
+
+8)cout<<s.find("sid");//returns the first index where its found,0 here
+
+9)s.insert(0,"best")//0->at which position to be inserted,""->string to be inserted
+
+10)(1)cout<<s.substr(3,4);//prnts ss,from 3 till 4 chars from 3
+   (2)string s="siddharth";
+cout<<s.substr(2);//prints ddharth
+
+11)string n="333";
+int k=stoi(n);
+cout<<k+2;//prnts integer 335;
+
+12)//from int to str
+cout<<to_string(k)+"2";//prnts 3332,appending is done not addition
+
+13)//to sort from small to big-(sorts even numeric string)
+string f="sjfrab";
+sort(f.begin(),f.end());//to sort the string
+cout<<f;
+//to sort from big to small-(sorts even numeric string)
+sort(s.begin(),s.end(),greater<int>());
+cout<<
+
+14)
+string s="ABCDE";
+//to converty into lower case
+transform(s.begin(),s.end(),s.begin(),::tolower);
+cout<<s;
+//into upper case
+transform(s.begin(),s.end(),s.begin(),::toupper);
+cout<<s;
+--------------------------------------------------------------------------
+RECURSION -
+it is calling a fun inside a fun.it reduces the size of the program.
+lets see an example-
+q-f/o the sum of the numbers till 4-
+int sum(int n)
+{
+if(n==0)
+{
+return 0;
+}
+int prevsum=sum(n-1)
+return n+prevsum;
+}
+int main()
+{
+int n;
+cin>>n;
+cout<<sum(n);
+}
+
+working-
+at first ,the main fun gets stored in the stack memory.now first sum(n=4) is called and its stack frame 
+will get stored in the stack,since in fun(n) we gave prevsum=sum(n-1),it will call sum(3) and stack 
+frame of 3 will be created and similarly for 2 and 1.when n=0,we have coded return 0,i.e stack of fun(0)
+returns 0 to sum(1) and since we have coded return n+prevsum,therefore sum(1) returns 1+0 to sum(2) and 
+sum(2) returns 1+2 to sum(3) and at sum(4) 6 is returned and since we return n+sum(n),hence 4+6 is returned
+to the main fun.
+-----------------------------------------------------------------------------------------------------------
+#VECTORS-are dynamic arrays ,i.e there size can be changed . 
+int main()
+{
+    int i;
+vector<int>v;//to create vector
+v.push_back(1);//to add elements in the vector
+v.push_back(2);
+v.push_back(3);
+for(i=0;i<v.size(),i++)//to print v;
+{
+cout<<v[i]<<" ";
+}
+//op=1 2 3
+//another way to print vector,using iterator
+vector<int>::iterator it;
+for(it=v.begin();it!=v.end();it++)
+{
+    cout<<*it<<" ";
+}
+//op=1 2 3
+//another way
+for(auto element:v)
+{
+    cout<<element<<" ";
+}
+//op=1 2 3
+v.pop_back();//removes the last element in the vector
+
+vector<int> vec(3,5);//prnts 5 ,3 times
+
+swap(v,vec);//swaps the values of v vec
+
+sort(v.begin(),v.end());//sorts the array
+
+return 0;
+}
+---------------------------------------------------------------------
+void display(vector<int> &v)
+{int i;
+    for(i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{int i;
+vector<int>vec;
+int arr[5];
+for(i=0;i<5;i++)
+{
+    cout<<"enter here"<<"\n";
+    cin>>arr[i];
+    vec.push_back(arr[i]);
+}
+cout<<"the entered values are"<<"\n";
+display(vec);
+  
+return 0;
+}
+-------------------------------------------------------------------------
+//pair
+
+int main()
+
+{
+ pair<int ,int > p;//can be any pair of data types
+int i;
+for(i=0;i<6;i++)
+{
+  p.first=22;
+  p.second=33;
+}
+for(i=0;i<6;i++)
+{
+  cout<<p.first<<",";
+  cout<<p.second<<" ";
+}
+//op=22,33 22,33 ....6 times.
+  return 0;
+}
+----------------------------------------------------------------------------
+ int n;
+  int c=0,i;
+  cin>>n;
+  int arr[n];
+  for(i=0;i<n;i++)
+  {
+    cin>>arr[i];
+  }
+   for(i=0;i<n;i++)
+  {
+   if
+  }
+
+for(i=0;i<n;i++)
+{
+  int j=i;
+  while(arr[i]>=arr[j] && j>=0)
+  {
+    c++;
+    j--;
+  } 
+}
+cout<<c;
+----------------------------------------------------------
+OBJECT ORIENTED PROGRAMMING IN CPP-
+#CLASS-(USER DEFINED DATATYPE)
+class  student
+{
+public:(by default the datatypes 
+are private in nature therefore we have to specify public )
+string name;//data members
+int age;
+void printinfo()
+{
+//it will print whatever we have entered in the main fun
+}
+};
+
+
+int main()
+{
+student a;
+a.name="sid";
+a.age=21;
+
+or
+student arr[3];
+for(int i=0;i<3;i++)
+{
+cin>>arr[i].name;
+cin>>arr[i].age;
+}
+for(int i=0;i<3;i++)
+{
+arr[i].printinfo();
+}
+return 0;
+}
+---------------------------
+class student{
+student(string s,int a)// parametarized constructor
+{
+name=s;
+age=a;
+}
+student()
+{
+//an empty constructor is called a default constructor
+
+}
+
+};
+int main()
+{
+student a("sid",21);//(the precedence of const. are- 1st const with 
+data members and then the default const.)
+a.printinfo();
+student b;//default const. called
+student c=a;//copy const.//it has the last precedance
+return 0;
+}
+---------------------------------------------
+#there are  2 types of copy constructors-copy(defined in main fun) and 
+default copy(defined in class itself)
+classstudent
+{
+student(string s,int a)// parametarized constructor
+{
+name=s;
+age=a;
+}
+student (student ,&a)//default copy const.
+{
+name =a.name;
+age=a.age;
+}
+};
+int main()
+{
+student a("sid",21);
+student c=a;
+}
+------------------------------------------------
+//difference b/w default copy const. and copy const.-
+->default copy const. does shallow copy where pointers are copied
+but the locations where they are pointing that is not copied.
+
+->copy const.(defined in the main fun) does deep copywhere the above problem 
+doesnt come.
+-------------------------------------------------------------
+#DESTRUCTOR -
+->
+-------------------------------------------------
+#TYPE MODIFIERS IN CLASS-
+->PUBLIC-OBJECT CAN ACCESS THE DATA MEMBERS AND MEMBER FUN FROM THE CLASS
+ACCESSBILITY-OWN CLASS,DERIVED CLASS,OUTSIDE
+ THE CLASS
+
+-> PRIVATE VARIABLE
+ACCESS-OWN CLASS ONLY
+
+->PROTECTED-
+ACCESS- OWN CLASS,DERIVED CLASS  
+--------------------------------------------
+#INHERITANCE IN CLASS-
+MEMBER FUN AND DATA MEMBERS CAN BE ACCESSED INT OTHER CLASS IF 
+THAT CLASS IS INHERITED FROM THE PARENT CLASS. 
+-------------------------------------------------
+#TYPES OF INHERITANCE-
+1)SINGLE -
+CLASS A->CLASS B
+EX-
+CLASS A{
+PUBLIC:
+VOID FUNA()
+{
+COUT<<"FUN A CALLED";
+}
+};
+CLASS B:PUBLIC A
+{PUBLIC:
+};
+INT MAIN()
+{
+B b;
+b.FUNA();
+}
+OP=FUN A CALLED
+---------------------
+2)MULTIPLE INHERITANCE-
+CLASS C-(INHERITES FROM BOTH CLASS A AND B)
+->CLASS A
+->CLASS B
+EX-
+CLASS A{
+PUBLIC:
+VOID FUNA()
+{
+COUT<<"FUN A CALLED";
+}
+};
+CLASS B
+{
+PUBLIC:
+VOID FUNB()
+{
+COUT<<"FUN B CALLED";}
+};
+CLASS C:PUBLIC A,PUBLIC B
+{PUBLIC:
+};
+INT MAIN()
+{
+C c;
+c.FUNA();
+c.FUNB();
+
+}
+op=FUN A CALLED
+FUN B CALLED
+----------------------------------
+ 3)MULTIPLE INHERITANCE-
+CLASS A->CLASS B->CLASS C
+class c inherited from b and b inherited from class a.
+CLASS A{
+PUBLIC:
+VOID FUNA()
+{
+COUT<<"FUN A CALLED";
+}
+};
+CLASS B:public A
+{
+PUBLIC:
+VOID FUNB()
+{
+cout<<"B CALLED";
+};
+CLASS C:PUBLIC B
+{PUBLIC:
+};
+INT MAIN()
+{
+C c;
+c.FUNA();
+c.FUNB();
+}
+--------------------------------
+4)HYBRID INHERITANCE -
+INHERITANCE WHICH HAS MORE THAN ONE TYPE OF INHERITANCE
+EX- CLASS D INHERITS FROM CLASS C AND CLASS B ,AND CLASS B INHERITS FROM
+CLASS A.
+HENCE CLASS D HAS CLASS A,B,C.
+----------------------------------
+5)HIRARCHIAL -
+CLASS A->CLASS B AND CLASS C->CLASS D AND E FROM CLASS B,CLASS F
+ AND G FROM CLASS C.
+-----------------------------------------
+ #POLYMORPHISM - polymorphism as the ability of a message to be 
+displayed in more than one form.
+POLYMORPHISM
+->COMPILE TIME
+a)fun overloading 
+b)operator overloading
+->RUN TIME
+a)virtual funtions
+---------------------------
+ FUN OVERLOADING-
+WHEN MANY FUN ARE CREATED WITH THE SAME NAME-
+EX-
+CLASS FO
+{
+VOID FUN()//THIS FUN HAS NO ARGUMENTS
+{COUT<<"FUN WITHOUT ARGUEMENT CALLED";}
+VOID FUN(INT X)//HAS A INTEGER ARGUMENT
+{COUT<<"FUN WITH ARGUMENT CALLED";}
+VOID FUN (DOUBLE Y)//DOUBLE AS A ARGUMENT
+{COUT<<"FUN WITH DOUBLE CALLED";}
+};
+INT MAIN()
+{
+FO a;
+a.FUN();
+a.FUN(33);
+a.FUN(33.3);
+}
+-----------------------------
+OPERATOR OVERLOADING-
+----------------------------
+VIRTUAL FUN-
+WHEN WE ADD VIRTUAL IN FRONT OF THE PARENT CLASS OR BASE CLASS FUN
+THEN THE FUN OVERRIDDEN IN THE CHILD CLASS IS EXECUED.
+EX-
+CLASS BASE
+{
+PUBLIC:
+ VIRTUAL VOID FUNA()//NOW THE THINGS WRITTEN IN THE OVERRIDDEN FUN
+IN THE CHILD CLASS WILL BE EXECUTED.
+{
+ COUT<<"BASE FUN CALLED";
+}
+};
+CLASS C:PUBLIC BASE
+{
+PUBLIC:
+VOID FUNA()
+{
+COUT<<"OVERRIDDEN FUN CALLED";
+};
+};
+INT MAIN()
+{
+BASE b;
+b.FUNA();
+}
+op=OVERRIDDEN FUN CALLED(it will print "BASE FUN CALLED" if we dont
+use virtual in front of VOID FUNA())
+------------------------------------------------------------------------
+#LINKED LIST-DATA STRUCTURE
+DIFF B/W LIST AND ARRATS
+ARRAY-SINGLE BLOCK OF MEMORY WITH PARTITION
+ linked LIST-multiple blocks of memory linked to each other
+LIMITATIONS OF ARRAY
+FIXED SIZE,CONTIGOUS BLOCK OF MEMORY,INSERTION AND DELETION IS COSTLY(LENGTHY AD TIME TAKING)
+PERKS OF LIST-VISEVERSA OF ABOVE
+------------------------------
+// bits/stdc++.h works in linux. 
+// It loads most of the libraries of C++ required.
+#include <bits/stdc++.h> 
+
+using namespace std;
+#define fastio ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+void solve()
+{
+   int t;
+    cin>>t;
+    while(t--)
+    {
+        int h,m,x;
+        cin>>h>>m>>x;
+        if(x<=60)
+        {
+            int l=x-5;
+        if((m+l)>59)
+        {
+            int k=(m+l)-60;
+            if(h==23)
+            {
+                if(k==0)
+            {
+                cout<<0<<0<<" "<<0<<0<<endl;
+            }
+            else
+            {
+               if(k<10)
+               {
+                    cout<<0<<0<<" "<<0<<k<<endl;
+               }
+               else
+               {
+                    cout<<0<<0<<" "<<k<<endl;
+               }
+            }
+            }
+            else
+            {
+                if(k==0)
+            {
+                if((h+1)<10)
+                {
+                    cout<<0<<h+1<<" "<<0<<0<<endl;
+                }
+                else
+                {
+                    cout<<h+1<<" "<<0<<0<<endl;
+                }
+            }
+            else
+            {
+                if(k<10)
+                {
+                    if((h+1)<10)
+                    {
+                        cout<<0<<h+1<<" "<<0<<k<<endl;
+                    }
+                    else
+                    {
+                        cout<<h+1<<" "<<0<<k<<endl;
+                    }
+                }
+                else
+                {
+                    if((h+1)<10)
+                    {
+                        cout<<0<<h+1<<" "<<k<<endl;
+                    }
+                    else
+                    {
+                        cout<<h+1<<" "<<k<<endl;
+                    }
+                }
+            }
+            }
+        }
+        else
+        {
+            if((h)<10)
+            {
+                cout<<0<<h<<" "<<m+l<<endl;
+            }
+            else
+            {
+                cout<<h<<" "<<m+l<<endl;
+            }
+        }
+        }
+        else
+        {
+            int f=x/60;
+            int z=x%60;
+            z=z-5;
+        if((m+z)>59)
+        {
+            int k=(m+z)-60;
+            if(h==23)
+            {
+                if(k==0)
+            {
+                cout<<0<<0<<" "<<0<<0<<endl;
+            }
+            else
+            {
+               if(k<10)
+               {
+                    cout<<0<<0<<" "<<0<<k<<endl;
+               }
+               else
+               {
+                    cout<<0<<0<<" "<<k<<endl;
+               }
+            }
+            }
+            else
+            {
+                if(k==0)
+            {
+                if((h+1)<10)
+                {
+                    cout<<0<<h+1<<" "<<0<<0<<endl;
+                }
+                else
+                {
+                    cout<<h+1<<" "<<0<<0<<endl;
+                }
+            }
+            else
+            {
+                if(k<10)
+                {
+                    if((h+1)<10)
+                    {
+                        cout<<0<<h+1<<" "<<0<<k<<endl;
+                    }
+                    else
+                    {
+                        cout<<h+1<<" "<<0<<k<<endl;
+                    }
+                }
+                else
+                {
+                    if((h+1)<10)
+                    {
+                        cout<<0<<h+1<<" "<<k<<endl;
+                    }
+                    else
+                    {
+                        cout<<h+1<<" "<<k<<endl;
+                    }
+                }
+            }
+            }
+        }
+        else
+        {
+            if((h)<10)
+            {
+                cout<<0<<h<<" "<<m+l<<endl;
+            }
+            else
+            {
+                cout<<h<<" "<<m+l<<endl;
+            }
+        }
+        }
+    }
+}
+int main()
+{
+  fastio;
+ solve();
+    return 0;
+}
